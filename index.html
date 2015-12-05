@@ -1,9 +1,17 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 </head>
 <body>
+<div class="cat-name" data-bind="text:currentCat().catName"></div>
+<div class="click-num" data-bind="text:currentCat().clickCount"></div>
+<img class="cat-img" src=""  data-bind="attr:{src : currentCat().catImg}, click: catClicked"/>
+<div data-bind="text:currentCat().level">
+</div>
 
 </body>
 </html>
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="bower_components/knockout/dist/knockout.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
