@@ -4,10 +4,10 @@
 	<title></title>
 </head>
 <body>
-<div class="cat-name" data-bind="text:catName"></div>
-<div class="click-num" data-bind="text:clickCount"></div>
-<img class="cat-img" src=""  data-bind="attr:{src : catImg}, click: catClicked"/>
-<div data-bind="text:level">
+<div class="cat-name" data-bind="text:currentCat().catName"></div>
+<div class="click-num" data-bind="text:currentCat().clickCount"></div>
+<img class="cat-img" src=""  data-bind="attr:{src : currentCat().catImg}, click: catClicked"/>
+<div data-bind="text:currentCat().level">
 </div>
 
 </body>

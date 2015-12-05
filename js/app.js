@@ -1,11 +1,11 @@
-var ViewModel = function(){
-	var self = this
+var Cat = function(){
+	var self = this;
 
-	self.catImg = ko.observable("catClick.jpg");
-	self.catName = ko.observable("Kat");
-	self.clickCount = ko.observable(0);
+	this.catImg = ko.observable("catClick.jpg");
+	this.catName = ko.observable("Kat");
+	this.clickCount = ko.observable(0);
 
-	self.level = ko.computed(function(){
+	this.level = ko.computed(function(){
 		var level = "";
 		var count = self.clickCount();
 
@@ -22,8 +22,12 @@ var ViewModel = function(){
 		return level;
 	});
 
-	self.catClicked = function(){
-		self.clickCount(this.clickCount()+1);
+}
+var ViewModel = function(){
+	this.currentCat = ko.observable(new Cat());
+
+	this.catClicked = function(){
+		this.currentCat().clickCount(this.currentCat().clickCount()+1);
 	};
 
 	
